@@ -8,8 +8,11 @@ export ZSH="/home/leo/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# default zsh theme is powerlevel10k
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
+if [[ ( ! -z ${SSH_CONNECTION}) && ( -z ${NERD_FONT}) ]]; then
+	ZSH_THEME="leovincentseles/nctu"
+fi
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -98,5 +101,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# Some useful alias
+[[ ! -f ~/.useful_alias.zsh ]] || source ~/.useful_alias.zsh
+
+# environment variables
+[[ ! -f ~/.env.zsh ]] || source ~/.env.zsh
+
+if [ "$ZSH_THEME" = "leovincentseles/nctu" ]; then
+	return
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
