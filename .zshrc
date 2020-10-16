@@ -9,9 +9,10 @@ export ZSH="/home/leo/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # default zsh theme is powerlevel10k
-ZSH_THEME="powerlevel10k/powerlevel10k"
 if [[ ( ! -z ${SSH_CONNECTION}) && ( -z ${NERD_FONT}) ]]; then
 	ZSH_THEME="leovincentseles/nctu"
+else
+	ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,7 +72,7 @@ fi
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
