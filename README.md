@@ -22,7 +22,7 @@ cp ~/.zshrc ~/.zshrc.orig
   ```zsh
   git clone --depth=1 https://github.com/leovincentseles/nctu.zsh-theme.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/leovincentseles
   ```
-### [zsh-autosuggestion]()
+### [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
   ```zsh
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   ```
